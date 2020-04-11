@@ -1,6 +1,6 @@
 [![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/erela-discord)
-[![npm downloads](https://img.shields.io/npm/dt/lavacord.svg?maxAge=3600)](https://www.npmjs.com/package/erela-discord)
-[![NPM version](https://badge.fury.io/js/lavacord.svg)](http://badge.fury.io/js/erela-discord)
+[![npm downloads](https://img.shields.io/npm/dt/erela-discord.svg?maxAge=3600)](https://www.npmjs.com/package/erela-discord)
+[![NPM version](https://badge.fury.io/js/erela-discord.svg)](http://badge.fury.io/js/erela-discord)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 [![dependencies Status](https://david-dm.org/Loliticos/erela-discord/status.svg)](https://david-dm.org/Loliticos/erela-discord)
 [![NPM](https://nodei.co/npm/erela-discord.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/erela-discord/)
