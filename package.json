@@ -1,0 +1,32 @@
+{
+  "name": "erela-discord",
+  "version": "1.0.1",
+  "description": "A oauth2 discord helper library",
+  "main": "src/index.ts",
+  "directories": {
+    "lib": "src/lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Loliticos/erela-discord.git"
+  },
+  "keywords": [
+    "api",
+    "discord",
+    "discordapp",
+    "oauth2"
+  ],
+  "author": "Loliticos <@Loliticos>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "discord.js": "^12.1.1",
+    "node-fetch": "^2.6.0",
+    "typescript": "^3.8.3",
+    "url": "^0.11.0"
+  },
+  "bugs": {
+    "url": "https://github.com/Loliticos/erela-discord/issues"
+  },
+  "homepage": "https://github.com/Loliticos/erela-discord#readme"
+}
