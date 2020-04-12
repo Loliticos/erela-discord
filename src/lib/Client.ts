@@ -55,11 +55,11 @@ export class ErelaClient {
   }
 
   public requestToken(code): Promise<TokenRequestResult> {
-    const data = new URLSearchParams({
+    const body = new URLSearchParams({
       client_id: this.clientID,
       client_secret: this.clientSecret,
       redirect_uri: this.redirectUri,
-      scope: "identify guilds",
+      scope: this.scope,
       grant_type: "authorization_code",
       code,
     });
@@ -67,8 +67,8 @@ export class ErelaClient {
     return fetch(`${this.baseURL}/oauth2/token`, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      data,
-    }).then((res) => res.json());
+      body,
+    }).then((res) => res.ok ? res.json() : Promise.reject(res));
   }
 
   public buildQuery(obj: object, join = "&") {
