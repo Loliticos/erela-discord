@@ -14,7 +14,7 @@ export class ErelaClient {
   /**
    * The base url for discordapp
    */
-  public baseURL: string = "https://discordapp.com/";
+  public baseURL: string = "https://discordapp.com/api";
   /**
    * Client id to be used in the application
    */
