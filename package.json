@@ -1,6 +1,6 @@
 {
   "name": "erela-discord",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A oauth2 discord helper library",
   "main": "src/index.ts",
   "directories": {

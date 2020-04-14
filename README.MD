@@ -28,7 +28,7 @@ const { ErelaClient } = require("erela-discord");
 
 const options = {
   clientID = "12345678910", // Client ID, that's pretty obvious
-  redirectUri = "http://localhost/8080", // Set it on https://discordapp.com/developers/applications/bot_id/oauth2
+  redirectUri = "http://localhost/8080/auth", // Set it on https://discordapp.com/developers/applications/bot_id/oauth2
   scope = "guilds identify", // Default to guilds identify, no need to use this option if you're not changing it
   clientSecret = "Client Secret" // Your client secret
 };
@@ -87,14 +87,14 @@ const { access_token } = Connection.requestToken(
 Connection.getUser(access_token).then(console.log);
 
 /*
-  { 
+  {
     username: '1868 Loliticos',
     locale: 'pt-BR',
     mfa_enabled: false,
     flags: 128,
     avatar: '8342729096ea3675442027381ff50dfe',
     discriminator: '1868',
-    id: '532294395655880705' 
+    id: '532294395655880705'
   }
 */
 ```
@@ -115,7 +115,7 @@ const { access_token } = Connection.requestToken(
 Connection.getUserGuilds(access_token).then(console.log);
 
 /*
-  { 
+  {
     "id": "674295547024244767",
     "name": "1868 Loliticos",
     "icon": "8342729096ea3675442027381ff50dfe",
@@ -141,17 +141,17 @@ const { access_token } = Connection.requestToken(
 Connection.getUserConnections(access_token).then(console.log);
 
 /*
-  { 
-    [ 
-      { 
+  {
+    [
+      {
         verified: true,
         name: 'epicusername',
         show_activity: true,
         friend_sync: false,
         type: 'twitch',
         id: '31244565',
-        visibility: 1 
-      } 
+        visibility: 1
+      }
     ]
   }
 */
