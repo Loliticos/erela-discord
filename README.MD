@@ -29,8 +29,8 @@ const { ErelaClient } = require("erela-discord");
 const options = {
   clientID = "12345678910", // Client ID, that's pretty obvious
   redirectUri = "http://localhost/8080/auth", // Set it on https://discordapp.com/developers/applications/bot_id/oauth2
-  scope = "guilds identify", // Default to guilds identify, no need to use this option if you're not changing it
-  clientSecret = "Client Secret" // Your client secret
+  scope = "guilds identify", // Default to "guilds identify", no need to use this option if you're not changing it
+  clientSecret = "Client Secret" // Your bot client secret
 };
 
 const Connection = new ErelaClient(options);

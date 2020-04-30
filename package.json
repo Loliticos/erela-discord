@@ -1,8 +1,14 @@
 {
   "name": "erela-discord",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "A oauth2 discord helper library",
-  "main": "src/index.ts",
+  "main": "dist/index",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "compile": "tsc -p .",
+    "lint": "eslint --fix --ext ts src",
+    "test": "eslint --ext ts src"
+  },
   "directories": {
     "lib": "src/lib"
   },
@@ -20,7 +26,12 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
     "discord.js": "^12.1.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
     "node-fetch": "^2.6.0",
     "typescript": "^3.8.3",
     "url": "^0.11.0"
@@ -28,5 +39,10 @@
   "bugs": {
     "url": "https://github.com/Loliticos/erela-discord/issues"
   },
-  "homepage": "https://github.com/Loliticos/erela-discord#readme"
+  "homepage": "https://github.com/Loliticos/erela-discord#readme",
+  "dependencies": {
+    "@types/node": "^13.13.4",
+    "@types/node-fetch": "^2.5.7",
+    "@types/ws": "^7.2.4"
+  }
 }

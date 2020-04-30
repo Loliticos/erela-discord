@@ -14,7 +14,7 @@ export class ErelaClient {
   /**
    * The base url for discordapp
    */
-  public baseURL: string = "https://discordapp.com/api";
+  public baseURL = "https://discordapp.com/api";
   /**
    * Client id to be used in the application
    */
@@ -22,7 +22,7 @@ export class ErelaClient {
   /**
    * Redirect url from oauth2
    */
-  public redirectUri: URL | string;
+  public redirectUri: string;
   /**
    * Client secret
    */
@@ -30,11 +30,11 @@ export class ErelaClient {
   /**
    * Scopes from redirect uri
    */
-  public scope: string;
+  public scope: any;
   /**
    * @param options Options to be used in the application
    */
-  public constructor(options?: ClientOptions) {
+  public constructor(options: ClientOptions) {
     if (typeof options === undefined) {
       throw new TypeError("You must provide valid Client options");
     }
@@ -45,7 +45,7 @@ export class ErelaClient {
     this.clientSecret = options.clientSecret;
   }
 
-  public authURL(responseType: string = "code") {
+  public authURL(responseType = "code"): string {
     return `${this.baseURL}/oauth2/authorize?${this.buildQuery({
       client_id: this.clientID,
       redirect_uri: this.redirectUri,
@@ -54,7 +54,7 @@ export class ErelaClient {
     })}`;
   }
 
-  public requestToken(code): Promise<TokenRequestResult> {
+  public requestToken(code: any): Promise<TokenRequestResult> {
     const body = new URLSearchParams({
       client_id: this.clientID,
       client_secret: this.clientSecret,
@@ -68,10 +68,10 @@ export class ErelaClient {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body,
-    }).then((res) => res.ok ? res.json() : Promise.reject(res));
+    }).then((res) => (res.ok ? res.json() : Promise.reject(res)));
   }
 
-  public buildQuery(obj: object, join = "&") {
+  public buildQuery(obj: object, join = "&"): string {
     return obj
       ? Object.entries(obj)
           .map((a) => a.join("="))
@@ -79,30 +79,30 @@ export class ErelaClient {
       : "";
   }
 
-  public getUser(access_token): Promise<User> {
+  public getUser(access_token: any): Promise<User> {
     return fetch(`${this.baseURL}/users/@me`, {
       headers: {
         "Content-Type": "application/json",
         Authentication: { Bearer: access_token },
       },
-    }).then((res) => res.json());
+    }).then((res: any) => res.json());
   }
 
-  public getUserGuilds(access_token): Promise<Guild> {
+  public getUserGuilds(access_token: any): Promise<Guild> {
     return fetch(`${this.baseURL}/users/@me/guilds`, {
       headers: {
         "Content-Type": "application/json",
         Authentication: { Bearer: access_token },
       },
-    }).then((res) => res.json());
+    }).then((res: any) => res.json());
   }
 
-  public getUserConnections(access_token): Promise<Connection> {
+  public getUserConnections(access_token: any): Promise<Connection> {
     return fetch(`${this.baseURL}/users/@me/connections`, {
       headers: {
         "Content-Type": "application/json",
         Authentication: { Bearer: access_token },
       },
-    }).then((res) => res.json());
+    }).then((res: any) => res.json());
   }
 }
