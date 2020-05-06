@@ -27,10 +27,10 @@ npm install erela-discord
 const { ErelaClient } = require("erela-discord");
 
 const options = {
-  clientID = "12345678910", // Client ID, that's pretty obvious
-  redirectUri = "http://localhost/8080/auth", // Set it on https://discordapp.com/developers/applications/bot_id/oauth2
-  scope = "guilds identify", // Default to "guilds identify", no need to use this option if you're not changing it
-  clientSecret = "Client Secret" // Your bot client secret
+  clientID: "12345678910", // Client ID, that's pretty obvious
+  redirectUri: "http://localhost/8080/auth", // Set it on https://discordapp.com/developers/applications/bot_id/oauth2
+  scope: ["guilds, identify"], // Default to "guilds identify", no need to use this option if you're not changing it
+  clientSecret: "Bot Client Secret", // Your bot client secret
 };
 
 const Connection = new ErelaClient(options);
@@ -73,7 +73,7 @@ Connection.requestToken(access_token).then(console.log);
 
 ## getUser(access_token)
 
-access_token: Authentication token, get one by `requestToken()`
+access_token: Acess token, get one by `requestToken()`
 
 ```javascript
 const { ErelaClient } = require("erela-discord");
@@ -81,7 +81,7 @@ const { ErelaClient } = require("erela-discord");
 const Connection = new ErelaClient("options");
 
 const { access_token } = Connection.requestToken(
-  "2qRZcUqUa9816RVnnEKRpzOL2CvHBgF"
+  "6qrZcUqja7812RVdnEKjpzOL4CvHBFG"
 );
 
 Connection.getUser(access_token).then(console.log);
