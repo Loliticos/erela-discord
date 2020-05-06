@@ -41,7 +41,7 @@ export class ErelaClient {
 
     this.clientID = options.clientID;
     this.redirectUri = options.redirectUri;
-    this.scope = options.scope || "guilds identify";
+    this.scope = options.scope || ["guilds", "identify"];
     this.clientSecret = options.clientSecret;
   }
 
