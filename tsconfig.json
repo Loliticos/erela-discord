@@ -27,7 +27,7 @@
   "typedocOptions": {
     "out": "./docs/",
     "readme": "./README.md",
-    "name": "Lavacord",
+    "name": "erela-discord",
     "exclude": ["**/node_modules/**"],
     "mode": "file",
     "excludeExternals": true,
